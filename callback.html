@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tesla 授权回调</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; padding: 40px; text-align: center; }
+        .code { background: #f5f5f5; padding: 20px; border-radius: 8px; font-family: monospace; word-break: break-all; margin: 20px 0; }
+        h1 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>✅ 授权成功</h1>
+    <p>请复制下面的授权码：</p>
+    <div class="code" id="code">正在获取...</div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        document.getElementById('code').textContent = code || '未找到授权码';
+    </script>
+</body>
+</html>
